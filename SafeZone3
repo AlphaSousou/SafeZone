@@ -1,0 +1,19 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const articles = [
+        { title: "Bienvenue sur le blog !", content: "Nous lançons ce blog pour donner une voix à tous les élèves du lycée." },
+        { title: "Comment s’intégrer au lycée ?", content: "Quelques conseils pour mieux s’intégrer et se sentir à l’aise." }
+    ];
+
+    let articleList = document.getElementById("article-list");
+
+    articles.forEach(article => {
+        let articleDiv = document.createElement("div");
+        articleDiv.innerHTML = `<h3>${article.title}</h3><p>${article.content}</p>`;
+        articleList.appendChild(articleDiv);
+    });
+
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("Votre message a bien été envoyé !");
+    });
+});
